@@ -12,8 +12,10 @@ import java.util.List;
 @RestController
 public class PeliculasController {
 
-    @Autowired
     private PeliculasService peliculasService;
+
+    @Autowired
+    public PeliculasController(PeliculasService peliculasService) {this.peliculasService = peliculasService;} // allow tests
 
     @GetMapping("/peliculas")
     public ResponseEntity<List<Pelicula>> getAll(@RequestParam(required = false) String q) {
