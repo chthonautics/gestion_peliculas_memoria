@@ -12,8 +12,12 @@ import java.util.stream.Collectors;
 @Service
 public class PeliculasServiceImpl implements PeliculasService {
 
+    private final PeliculasRepository peliculasRepository;
+
     @Autowired
-    private PeliculasRepository peliculasRepository;
+    public PeliculasServiceImpl(PeliculasRepository peliculasRepository) {
+        this.peliculasRepository = peliculasRepository;
+    }
 
     @Override
     public Pelicula createPelicula(Pelicula pelicula) {
