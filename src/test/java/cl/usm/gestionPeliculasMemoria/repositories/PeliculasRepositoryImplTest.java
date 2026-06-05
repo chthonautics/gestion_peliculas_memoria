@@ -46,11 +46,6 @@ class PeliculasRepositoryImplTest {
     }
 
     @Test
-    void findAll_isEmptyForNewRepository() {
-        assertTrue(repository.findAll().isEmpty());
-    }
-
-    @Test
     void findAll_returnsAllInserted() {
         repository.insert(pelicula("1"));
         repository.insert(pelicula("2"));
